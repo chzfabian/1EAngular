@@ -1,0 +1,31 @@
+<mat-drawer-container class="dashboard-container" autosize>
+
+  <!-- SIDEBAR -->
+  <mat-drawer #drawer class="dashboard-sidenav" mode="side">
+    <p>Menu Lateral</p>
+    <p *ngIf="showFiller">Accion del menu lateral</ p>
+    <button (click)="showFiller = !showFiller" mat-raised-button>
+      Opción menu
+    </button>
+  </mat-drawer>
+
+  <!--Contenedor-->
+  <div class="dashboard-sidenav-content">
+    <!--Toolbar-->
+    <mat-toolbar color="primary">
+      <button
+        (click)="drawer.toggle()"
+        mat-icon-button
+        class="dashboard-icon"
+        aria-label="dashboard icon-button with menu icon"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span> 1EAngular </span>
+    </mat-toolbar>
+    <!--Paginas-->
+    <main>
+      <app-tablas></app-tablas>
+    </main>
+  </div>
+</mat-drawer-container>
